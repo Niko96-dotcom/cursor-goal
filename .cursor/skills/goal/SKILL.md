@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Goal Skill
 
+Install: `cursor-goal-install-skill --global` after `npm install -g cursor-goal` (see repo `docs/install.md`).
+
 Use this skill when the user invokes `/goal` or asks for a Codex-style persistent goal loop.
 
 **Run the loop in this Cursor chat session.** You are the agent. Do not spawn `@cursor/sdk`, do not require `CURSOR_API_KEY`, and do not call external agent APIs.

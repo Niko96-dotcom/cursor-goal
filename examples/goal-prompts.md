@@ -1,5 +1,9 @@
 # Example goals
 
+Install the CLI and skill first: [`docs/install.md`](../docs/install.md).
+
+Use these with `cursor-goal` from the terminal, or paste the objective into Cursor as `/goal <objective>`.
+
 ## Bug fix
 
 ```bash

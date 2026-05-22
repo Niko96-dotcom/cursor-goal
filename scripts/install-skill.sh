@@ -8,10 +8,15 @@ usage() {
 Install the /goal Cursor skill.
 
 Usage:
+  cursor-goal-install-skill [--global] [target-dir]
   install-skill.sh [--global] [target-dir]
 
-  --global        Install to ~/.cursor/skills/goal (all workspaces)
+  --global, -g    Install to ~/.cursor/skills/goal (all workspaces)
   target-dir      Install to <target-dir>/.cursor/skills/goal (default: $PWD)
+
+After a global npm install:
+  npm install -g cursor-goal
+  cursor-goal-install-skill --global
 EOF
 }
 

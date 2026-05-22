@@ -2,6 +2,18 @@
 
 Zero-token proof that `cursor-goal` behaves correctly without any Agent SDK.
 
+## Prerequisites
+
+CLI on PATH from either:
+
+```bash
+npm install -g cursor-goal
+```
+
+or a source checkout with `npm link` after `npm run build`.
+
+Skill install is **not** required for `npm test` (CLI-only). For manual `/goal` in Cursor, install the skill first — see [`install.md`](install.md).
+
 ## Default
 
 ```bash
@@ -22,11 +34,14 @@ Automated E2E in a temp directory: set goal → create artifact → `checkpoint`
 
 ## Manual `/goal` proof in Cursor
 
+1. Install skill: `cursor-goal-install-skill --global` (or `npm run install-skill:global` from clone).
+2. In Agent chat:
+
 ```text
 /goal Create live-smoke.txt containing ok. Verify with: test -f live-smoke.txt && grep -qx ok live-smoke.txt
 ```
 
-After the agent finishes, confirm:
+3. After the agent finishes, confirm:
 
 ```bash
 cursor-goal

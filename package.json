@@ -1,6 +1,6 @@
 {
   "name": "cursor-goal",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Codex-style /goal loops for Cursor Agent chat with local .goal state — no Agent SDK required.",
   "type": "module",
   "license": "MIT",
@@ -27,7 +27,8 @@
   },
   "bin": {
     "cursor-goal": "./dist/index.js",
-    "cgoal": "./dist/index.js"
+    "cgoal": "./dist/index.js",
+    "cursor-goal-install-skill": "./scripts/install-skill.sh"
   },
   "exports": {
     ".": "./dist/index.js"
@@ -36,7 +37,9 @@
     "dist",
     "README.md",
     "LICENSE",
+    "CHANGELOG.md",
     ".cursor/skills/goal/SKILL.md",
+    "scripts/install-skill.sh",
     "docs",
     "examples"
   ],

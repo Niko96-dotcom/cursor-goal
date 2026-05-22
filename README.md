@@ -4,6 +4,10 @@ A Codex-style `/goal` loop for **Cursor Agent chat**, with durable local state i
 
 The agent loop runs in Cursor on your subscription — like Codex Goal mode. The CLI does not spawn a second agent via `@cursor/sdk`. It manages goal state, verification, and checkpoint accounting while **you** (or `/goal` in chat) do the work.
 
+**Install (npm):** `npm install -g cursor-goal && cursor-goal-install-skill --global`
+
+**Repo:** https://github.com/Niko96-dotcom/cursor-goal · **npm:** https://www.npmjs.com/package/cursor-goal
+
 ## What it copies from Codex Goal mode
 
 - `/goal <objective>` sets or replaces the active goal.
@@ -18,11 +22,20 @@ The agent loop runs in Cursor on your subscription — like Codex Goal mode. The
 
 - Node.js 22+
 - Cursor Agent chat (for the loop itself)
-- Optional: `cursor-goal` on PATH for state/checkpoint helpers
+- `cursor-goal` on PATH and the goal skill installed (see [Install](#install))
 
 No API key. No Agent SDK.
 
 ## Install
+
+### npm (recommended)
+
+```bash
+npm install -g cursor-goal
+cursor-goal-install-skill --global
+```
+
+### From source
 
 ```bash
 git clone https://github.com/Niko96-dotcom/cursor-goal.git
@@ -32,6 +45,8 @@ npm run build
 npm link
 npm run install-skill:global
 ```
+
+Full paths, uninstall, and troubleshooting: [`docs/install.md`](docs/install.md).
 
 ## Use `/goal` in Cursor (primary)
 
@@ -63,11 +78,15 @@ EOF
 
 Setting or resuming a goal prints: `Continue in Cursor Agent chat with: /goal resume`
 
+Alias: `cgoal` (same binary).
+
 ## Strong goal pattern
 
 ```text
 /goal <desired end state>, verified by <specific command or artifact>, while preserving <constraints>. Use <allowed files/tools>. Between checkpoints, record what changed, what evidence was checked, and the next best action. If blocked, stop with the blocker and the input needed.
 ```
+
+More examples: [`examples/goal-prompts.md`](examples/goal-prompts.md).
 
 ## How it works
 
@@ -81,9 +100,19 @@ Cursor chat (/goal)  →  work + GOAL_STATUS lines
 
 See [`docs/smoke-test.md`](docs/smoke-test.md). `npm test` is zero-token smoke for CLI lifecycle + checkpoint recording.
 
-## Research notes
+## Docs
 
-See [`docs/codex-goal-research.md`](docs/codex-goal-research.md).
+| Doc | Purpose |
+|-----|---------|
+| [`docs/install.md`](docs/install.md) | Install, skill, uninstall, troubleshooting |
+| [`docs/smoke-test.md`](docs/smoke-test.md) | Automated and manual verification |
+| [`docs/publishing.md`](docs/publishing.md) | Releases and npm CI |
+| [`docs/codex-goal-research.md`](docs/codex-goal-research.md) | Codex Goal-mode alignment notes |
+| [`CHANGELOG.md`](CHANGELOG.md) | Version history |
+
+## Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Disclaimer
 

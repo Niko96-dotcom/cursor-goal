@@ -2,6 +2,8 @@
 
 `cursor-goal` can run shell verification commands in your workspace and is designed to pair with Cursor Agent chat, which can edit files and run tools. Treat it like a developer tool with real workspace access.
 
+Install and scope: [`docs/install.md`](docs/install.md).
+
 ## Reporting issues
 
 For non-sensitive bugs, open a [GitHub issue](https://github.com/Niko96-dotcom/cursor-goal/issues/new). Do not paste secrets, tokens, or private `.goal/` logs.

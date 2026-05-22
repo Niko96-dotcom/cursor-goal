@@ -2,6 +2,8 @@
 
 This repository builds a small TypeScript CLI around local `.goal/` state for Codex-style `/goal` loops in Cursor Agent chat.
 
+End-user install: `docs/install.md`. Releases: `docs/publishing.md`, `CHANGELOG.md`.
+
 Rules:
 
 - Keep dependencies minimal. No `@cursor/sdk`.
