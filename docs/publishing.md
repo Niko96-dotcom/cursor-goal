@@ -1,37 +1,8 @@
-# Publishing to GitHub
+# Publishing
 
-This repository is prepared as an open-source GitHub project. To publish it:
+## Release checklist
 
-```bash
-cd cursor-goal
-git init
-git add .
-git commit -m "Initial open-source release"
-gh repo create Niko96-dotcom/cursor-goal --public --source=. --remote=origin --push
-```
-
-Or without GitHub CLI:
-
-```bash
-git remote add origin git@github.com:Niko96-dotcom/cursor-goal.git
-git branch -M main
-git push -u origin main
-```
-
-Before publishing, confirm:
-
-- `Niko` in `LICENSE` is the copyright holder you want
-- `.env` stays gitignored if you add local overrides
-- README disclaimer and SECURITY contact are up to date
-
-After the repo is public:
-
-```bash
-gh repo edit Niko96-dotcom/cursor-goal --visibility public --accept-visibility-change-consequences
-gh release create v0.2.0 --title "v0.2.0" --notes "Initial public release: Codex-style /goal for Cursor Agent chat."
-```
-
-Recommended first release checklist:
+Before tagging a release:
 
 ```bash
 npm install
@@ -40,3 +11,37 @@ npm test
 npm run build
 npm pack --dry-run
 ```
+
+Optional live smoke (temp directory):
+
+```bash
+# See docs/smoke-test.md — full CLI + verification + checkpoint flow
+```
+
+## GitHub release
+
+Tag should point at `main` after CI is green:
+
+```bash
+gh release create v0.2.1 --title "v0.2.1" --notes-file - <<'EOF'
+## Summary
+
+- Cursor Agent chat runs the goal loop; CLI manages `.goal/` state and verification only (no Agent SDK).
+- Stricter persisted state validation and fail-closed checkpoint policy.
+- CLI version reads from package.json.
+
+## Install
+
+git clone https://github.com/Niko96-dotcom/cursor-goal.git
+cd cursor-goal && npm install && npm run build && npm link
+npm run install-skill:global
+EOF
+```
+
+## npm (optional)
+
+```bash
+npm publish --access public
+```
+
+Confirm package name `cursor-goal` is available on your npm account before publishing.

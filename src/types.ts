@@ -89,7 +89,7 @@ export type GoalState = {
   updatedAt: string
   modelRequested: string
   modelResolved?: ResolvedModelSummary
-  /** Audit/metadata only; does not select the Cursor chat model (see modelLabel). */
+  /** Audit/metadata only; does not select the Cursor chat model (see resolveModelLabel in state). */
   tier: ModelTier
   verification: ValidationConfig
   budgets: GoalBudgets

@@ -16,6 +16,10 @@ npm test
 | `test/loopPolicy.test.ts` | Completion vs validation vs spin-loop blocking |
 | parser/args/validation tests | Codex-style parsing and safety |
 
+## CLI live smoke (no Cursor UI)
+
+Automated E2E in a temp directory: set goal → create artifact → `checkpoint` CONTINUE → `checkpoint` COMPLETE → verify `status: complete`. Same flow as the manual steps below, runnable via `tsx src/index.ts`.
+
 ## Manual `/goal` proof in Cursor
 
 ```text

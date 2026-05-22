@@ -1,6 +1,6 @@
 # Security Policy
 
-`cursor-goal` can run shell commands and autonomous coding agents. Treat it like a developer tool with real workspace access.
+`cursor-goal` can run shell verification commands in your workspace and is designed to pair with Cursor Agent chat, which can edit files and run tools. Treat it like a developer tool with real workspace access.
 
 ## Reporting issues
 

@@ -2,7 +2,6 @@
 import fs from "node:fs/promises"
 import { parseCli, usage } from "./args.js"
 import { continuationPromptForState, recordCheckpoint } from "./checkpoint.js"
-import { resolveModelLabel } from "./modelLabel.js"
 import {
   addHistory,
   appendRunLog,
@@ -10,6 +9,7 @@ import {
   createGoalState,
   formatGoalStatus,
   loadGoalState,
+  resolveModelLabel,
   resolveStateDir,
   saveGoalState,
   setGoalStatus,

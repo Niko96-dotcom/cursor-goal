@@ -64,6 +64,8 @@ Optional: pass `--once` on checkpoint to pause after one checkpoint when still a
 
 ## Operating contract
 
+For the full continuation contract (same text `cursor-goal prompt` prints), run `cursor-goal prompt` when you need the canonical wording.
+
 - Treat the goal text as both the starting prompt and the completion criteria.
 - Prefer small, auditable changes over sweeping rewrites.
 - Use repository evidence: files, diffs, tests, command output, artifacts.

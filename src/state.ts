@@ -8,12 +8,23 @@ import type {
   GoalHistoryEventName,
   GoalLifecycleStatus,
   GoalState,
+  ModelTier,
   ParsedCli,
   ResolvedModelSummary,
   ValidationResult,
 } from "./types.js"
 
 const CURRENT_FILE = "current.json"
+
+export function resolveModelLabel(requested: string, tier: ModelTier): ResolvedModelSummary {
+  const label = requested.trim()
+  const warnings =
+    tier === "auto"
+      ? []
+      : [`Requested tier ${tier}; Cursor chat uses the model selected in the composer.`]
+
+  return { requested: label, label, warnings }
+}
 
 export function resolveStateDir(cwd: string, explicit?: string) {
   return explicit ? path.resolve(explicit) : path.join(cwd, ".goal")

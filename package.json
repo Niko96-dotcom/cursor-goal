@@ -1,6 +1,6 @@
 {
   "name": "cursor-goal",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Codex-style /goal loops for Cursor Agent chat with local .goal state — no Agent SDK required.",
   "type": "module",
   "license": "MIT",
