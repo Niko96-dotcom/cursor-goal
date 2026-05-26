@@ -31,11 +31,11 @@ Optional live smoke (temp directory): see [`smoke-test.md`](smoke-test.md).
 Tag should point at `main` after CI is green:
 
 ````bash
-gh release create v0.3.1 --title "v0.3.1" --notes-file - <<'EOF'
+gh release create v0.3.2 --title "v0.3.2" --notes-file - <<'EOF'
 ## Summary
 
 - Public repo polish: clearer in-chat Cursor workflow language.
-- Removed private future-confidence and launch-copy notes from packaged docs.
+- Removed planning-only notes from packaged docs.
 - Dropped unused single-package pnpm workspace metadata.
 - See [CHANGELOG.md](https://github.com/Niko96-dotcom/cursor-goal/blob/main/CHANGELOG.md) for full notes.
 
